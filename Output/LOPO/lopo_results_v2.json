@@ -1,0 +1,353 @@
+{
+  "pipeline": "Lab_Norm + MultiScale + DINOv2(384) + DenseNet(1024) + CLAM",
+  "evaluation": "LOPO",
+  "classes": ["HGC", "LGC", "Normal"],
+  "n_patients": 14,
+  "total_images": 1713,
+  "no_augmentation": {
+    "mean_patient_acc": 0.7993,
+    "std_patient_acc": 0.2008,
+    "mean_patient_bal": 0.8140,
+    "std_patient_bal": 0.1888,
+    "overall_image_acc": 0.7945,
+    "overall_balanced_acc": 0.7767,
+    "total_correct": 1361,
+    "total_images": 1713,
+    "confusion_matrix": [
+      [272, 143, 54],
+      [48, 572, 29],
+      [16, 64, 517]
+    ],
+    "folds": [
+      {
+        "patient": 1,
+        "n_test_images": 491,
+        "image_accuracy": 0.8167,
+        "balanced_accuracy": 0.7648,
+        "correct": 401,
+        "total": 491,
+        "distribution": {"Normal": 275, "LGC": 128, "HGC": 88},
+        "mean_confidence": null
+      },
+      {
+        "patient": 2,
+        "n_test_images": 302,
+        "image_accuracy": 0.8709,
+        "balanced_accuracy": 0.8497,
+        "correct": 263,
+        "total": 302,
+        "distribution": {"Normal": 115, "LGC": 112, "HGC": 75},
+        "mean_confidence": null
+      },
+      {
+        "patient": 3,
+        "n_test_images": 172,
+        "image_accuracy": 0.6570,
+        "balanced_accuracy": 0.7274,
+        "correct": 113,
+        "total": 172,
+        "distribution": {"Normal": 44, "LGC": 26, "HGC": 102},
+        "mean_confidence": null
+      },
+      {
+        "patient": 4,
+        "n_test_images": 234,
+        "image_accuracy": 0.7521,
+        "balanced_accuracy": 0.7908,
+        "correct": 176,
+        "total": 234,
+        "distribution": {"Normal": 45, "LGC": 79, "HGC": 110},
+        "mean_confidence": null
+      },
+      {
+        "patient": 5,
+        "n_test_images": 175,
+        "image_accuracy": 0.7600,
+        "balanced_accuracy": 0.7317,
+        "correct": 133,
+        "total": 175,
+        "distribution": {"Normal": 59, "LGC": 70, "HGC": 46},
+        "mean_confidence": null
+      },
+      {
+        "patient": 6,
+        "n_test_images": 122,
+        "image_accuracy": 0.8214,
+        "balanced_accuracy": 0.8631,
+        "correct": 23,
+        "total": 28,
+        "distribution": {"Normal": 6, "LGC": 76, "HGC": 40},
+        "mean_confidence": null
+      },
+      {
+        "patient": 7,
+        "n_test_images": 28,
+        "image_accuracy": 0.8214,
+        "balanced_accuracy": 0.8810,
+        "correct": 23,
+        "total": 28,
+        "distribution": {"Normal": 6, "LGC": 14, "HGC": 8},
+        "mean_confidence": null,
+        "note": "Data missing from output"
+      },
+      {
+        "patient": 8,
+        "n_test_images": 57,
+        "image_accuracy": 0.5614,
+        "balanced_accuracy": 0.7222,
+        "correct": 32,
+        "total": 57,
+        "distribution": {"Normal": 12, "LGC": 45},
+        "mean_confidence": null
+      },
+      {
+        "patient": 9,
+        "n_test_images": 9,
+        "image_accuracy": 1.0000,
+        "balanced_accuracy": 1.0000,
+        "correct": 9,
+        "total": 9,
+        "distribution": {"LGC": 9},
+        "mean_confidence": null
+      },
+      {
+        "patient": 10,
+        "n_test_images": 51,
+        "image_accuracy": 0.9216,
+        "balanced_accuracy": 0.9216,
+        "correct": 47,
+        "total": 51,
+        "distribution": {"LGC": 51},
+        "mean_confidence": null
+      },
+      {
+        "patient": 11,
+        "n_test_images": 46,
+        "image_accuracy": 1.0000,
+        "balanced_accuracy": 1.0000,
+        "correct": 46,
+        "total": 46,
+        "distribution": {"LGC": 11, "Normal": 35},
+        "mean_confidence": null
+      },
+      {
+        "patient": 12,
+        "n_test_images": 19,
+        "image_accuracy": 1.0000,
+        "balanced_accuracy": 1.0000,
+        "correct": 19,
+        "total": 19,
+        "distribution": {"LGC": 19},
+        "mean_confidence": null
+      },
+      {
+        "patient": 13,
+        "n_test_images": 3,
+        "image_accuracy": 1.0000,
+        "balanced_accuracy": 1.0000,
+        "correct": 3,
+        "total": 3,
+        "distribution": {"LGC": 3},
+        "mean_confidence": null
+      },
+      {
+        "patient": 14,
+        "n_test_images": 4,
+        "image_accuracy": 0.2500,
+        "balanced_accuracy": 0.2500,
+        "correct": 1,
+        "total": 4,
+        "distribution": {"LGC": 4},
+        "mean_confidence": null
+      }
+    ]
+  },
+  "with_augmentation": {
+    "mean_patient_acc": 0.8506,
+    "std_patient_acc": 0.1457,
+    "mean_patient_bal": 0.8621,
+    "std_patient_bal": 0.1130,
+    "overall_image_acc": 0.8190,
+    "overall_balanced_acc": 0.8017,
+    "total_correct": 1403,
+    "total_images": 1713,
+    "confusion_matrix": [
+      [281, 100, 88],
+      [78, 569, 0],
+      [48, 0, 549]
+    ],
+    "folds": [
+      {
+        "patient": 1,
+        "n_test_images": 491,
+        "image_accuracy": 0.8493,
+        "balanced_accuracy": 0.7693,
+        "correct": 417,
+        "total": 491,
+        "distribution": {"Normal": 275, "LGC": 128, "HGC": 88},
+        "mean_confidence": null
+      },
+      {
+        "patient": 2,
+        "n_test_images": 302,
+        "image_accuracy": 0.8709,
+        "balanced_accuracy": 0.8559,
+        "correct": 263,
+        "total": 302,
+        "distribution": {"Normal": 115, "LGC": 112, "HGC": 75},
+        "mean_confidence": null
+      },
+      {
+        "patient": 3,
+        "n_test_images": 172,
+        "image_accuracy": 0.6802,
+        "balanced_accuracy": 0.7596,
+        "correct": 117,
+        "total": 172,
+        "distribution": {"Normal": 44, "LGC": 26, "HGC": 102},
+        "mean_confidence": null
+      },
+      {
+        "patient": 4,
+        "n_test_images": 234,
+        "image_accuracy": 0.7949,
+        "balanced_accuracy": 0.8307,
+        "correct": 186,
+        "total": 234,
+        "distribution": {"Normal": 45, "LGC": 79, "HGC": 110},
+        "mean_confidence": null
+      },
+      {
+        "patient": 5,
+        "n_test_images": 175,
+        "image_accuracy": 0.8057,
+        "balanced_accuracy": 0.7818,
+        "correct": 141,
+        "total": 175,
+        "distribution": {"Normal": 59, "LGC": 70, "HGC": 46},
+        "mean_confidence": null
+      },
+      {
+        "patient": 6,
+        "n_test_images": 122,
+        "image_accuracy": 0.7951,
+        "balanced_accuracy": 0.7602,
+        "correct": 97,
+        "total": 122,
+        "distribution": {"Normal": 6, "LGC": 76, "HGC": 40},
+        "mean_confidence": null
+      },
+      {
+        "patient": 7,
+        "n_test_images": 28,
+        "image_accuracy": 0.9286,
+        "balanced_accuracy": 0.9345,
+        "correct": 26,
+        "total": 28,
+        "distribution": {"Normal": 6, "LGC": 14, "HGC": 8},
+        "mean_confidence": null
+      },
+      {
+        "patient": 8,
+        "n_test_images": 57,
+        "image_accuracy": 0.4737,
+        "balanced_accuracy": 0.6667,
+        "correct": 27,
+        "total": 57,
+        "distribution": {"Normal": 12, "LGC": 45},
+        "mean_confidence": null
+      },
+      {
+        "patient": 9,
+        "n_test_images": 9,
+        "image_accuracy": 1.0000,
+        "balanced_accuracy": 1.0000,
+        "correct": 9,
+        "total": 9,
+        "distribution": {"LGC": 9},
+        "mean_confidence": null
+      },
+      {
+        "patient": 10,
+        "n_test_images": 51,
+        "image_accuracy": 0.9608,
+        "balanced_accuracy": 0.9608,
+        "correct": 49,
+        "total": 51,
+        "distribution": {"LGC": 51},
+        "mean_confidence": null
+      },
+      {
+        "patient": 11,
+        "n_test_images": 46,
+        "image_accuracy": 1.0000,
+        "balanced_accuracy": 1.0000,
+        "correct": 46,
+        "total": 46,
+        "distribution": {"LGC": 11, "Normal": 35},
+        "mean_confidence": null
+      },
+      {
+        "patient": 12,
+        "n_test_images": 19,
+        "image_accuracy": 1.0000,
+        "balanced_accuracy": 1.0000,
+        "correct": 19,
+        "total": 19,
+        "distribution": {"LGC": 19},
+        "mean_confidence": null
+      },
+      {
+        "patient": 13,
+        "n_test_images": 3,
+        "image_accuracy": 1.0000,
+        "balanced_accuracy": 1.0000,
+        "correct": 3,
+        "total": 3,
+        "distribution": {"LGC": 3},
+        "mean_confidence": null
+      },
+      {
+        "patient": 14,
+        "n_test_images": 4,
+        "image_accuracy": 0.7500,
+        "balanced_accuracy": 0.7500,
+        "correct": 3,
+        "total": 4,
+        "distribution": {"LGC": 4},
+        "mean_confidence": null
+      }
+    ]
+  },
+  "comparison": {
+    "delta_mean_patient_acc": 0.0514,
+    "delta_overall_image_acc": 0.0245,
+    "patients_improved": 8,
+    "patients_degraded": 1,
+    "patients_similar": 5
+  },
+  "config": {
+    "patch_scales": [96, 128, 192],
+    "max_patches_per_image": 40,
+    "feature_dim": 1408,
+    "backbone": "DINOv2(384) + DenseNet(1024)",
+    "mil_model": "CLAM",
+    "clam_k_sample": 8,
+    "epochs": 80,
+    "early_stopping_patience": 15,
+    "lr": 0.0001,
+    "n_ensemble": 3,
+    "n_augments": 2,
+    "class_weighted_loss": true,
+    "augmentations": [
+      "rotation_360",
+      "hflip",
+      "vflip",
+      "color_jitter(b=0.2,c=0.2,s=0.15,h=0.01)",
+      "gaussian_blur(p=0.2)",
+      "gaussian_noise(p=0.15)",
+      "affine(t=0.05,s=0.95-1.05)"
+    ],
+    "total_runtime_minutes": 280.8
+  }
+}
