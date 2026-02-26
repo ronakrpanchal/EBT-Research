@@ -1,0 +1,209 @@
+{
+  "experiment": "v3-with-augmentation",
+  "pipeline": "Lab_Norm + MultiScale + Augmentation + DINOv2(768) + DenseNet(1024) + CLAM",
+  "evaluation": "LOPO (Leave-One-Patient-Out)",
+  "augmentation": true,
+  "augmentation_strategy": {
+    "per_patch_augments": 2,
+    "techniques": [
+      "rotation_360",
+      "horizontal_flip",
+      "vertical_flip",
+      "color_jitter(brightness=0.15, contrast=0.15, saturation=0.12, hue=0.008)",
+      "gaussian_blur(p=0.2)",
+      "gaussian_noise(p=0.15, std=0.02)",
+      "affine(translate=0.05, scale=0.95-1.05)"
+    ]
+  },
+  "classes": ["HGC", "LGC", "Normal"],
+  "n_patients": 14,
+  "total_images": 1713,
+  "configuration": {
+    "backbones": {
+      "dinov2": "ViT-B/14",
+      "dinov2_dim": 768,
+      "densenet": "DenseNet121",
+      "densenet_dim": 1024,
+      "combined_dim": 1792
+    },
+    "mil_model": "CLAM",
+    "clam_hidden": 512,
+    "clam_k_sample": 12,
+    "patch_scales": [96, 128, 192],
+    "max_patches_per_image": 80,
+    "epochs": 100,
+    "early_stopping_patience": 25,
+    "learning_rate": 0.0001,
+    "n_ensemble": 5,
+    "class_weighted_loss": true,
+    "test_time_augmentation": true,
+    "tta_rounds": 5
+  },
+  "results": {
+    "mean_patient_accuracy": 0.8836,
+    "std_patient_accuracy": 0.131,
+    "mean_patient_balanced_accuracy": 0.8882,
+    "std_patient_balanced_accuracy": 0.1128,
+    "overall_image_accuracy": 0.8313,
+    "overall_balanced_accuracy": 0.8085,
+    "total_correct": 1424,
+    "total_images": 1713,
+    "confusion_matrix": [
+      [257, 168, 44],
+      [11, 597, 39],
+      [9, 18, 570]
+    ],
+    "per_class_metrics": {
+      "HGC": {
+        "precision": 0.93,
+        "recall": 0.55,
+        "f1_score": 0.69,
+        "support": 469
+      },
+      "LGC": {
+        "precision": 0.76,
+        "recall": 0.92,
+        "f1_score": 0.83,
+        "support": 647
+      },
+      "Normal": {
+        "precision": 0.87,
+        "recall": 0.95,
+        "f1_score": 0.91,
+        "support": 597
+      }
+    },
+    "macro_avg": {
+      "precision": 0.85,
+      "recall": 0.81,
+      "f1_score": 0.81
+    },
+    "weighted_avg": {
+      "precision": 0.85,
+      "recall": 0.83,
+      "f1_score": 0.82
+    }
+  },
+  "fold_results": [
+    {
+      "patient": 1,
+      "n_test_images": 491,
+      "accuracy": 0.8554,
+      "balanced_accuracy": 0.7845,
+      "correct": 420,
+      "total": 491
+    },
+    {
+      "patient": 2,
+      "n_test_images": 302,
+      "accuracy": 0.9007,
+      "balanced_accuracy": 0.8741,
+      "correct": 272,
+      "total": 302
+    },
+    {
+      "patient": 3,
+      "n_test_images": 172,
+      "accuracy": 0.6163,
+      "balanced_accuracy": 0.7427,
+      "correct": 106,
+      "total": 172
+    },
+    {
+      "patient": 4,
+      "n_test_images": 234,
+      "accuracy": 0.688,
+      "balanced_accuracy": 0.7645,
+      "correct": 161,
+      "total": 234
+    },
+    {
+      "patient": 5,
+      "n_test_images": 175,
+      "accuracy": 0.8457,
+      "balanced_accuracy": 0.8228,
+      "correct": 148,
+      "total": 175
+    },
+    {
+      "patient": 6,
+      "n_test_images": 122,
+      "accuracy": 0.8689,
+      "balanced_accuracy": 0.8431,
+      "correct": 106,
+      "total": 122
+    },
+    {
+      "patient": 7,
+      "n_test_images": 28,
+      "accuracy": 0.9643,
+      "balanced_accuracy": 0.9583,
+      "correct": 27,
+      "total": 28
+    },
+    {
+      "patient": 8,
+      "n_test_images": 57,
+      "accuracy": 0.9649,
+      "balanced_accuracy": 0.9778,
+      "correct": 55,
+      "total": 57
+    },
+    {
+      "patient": 9,
+      "n_test_images": 9,
+      "accuracy": 0.6667,
+      "balanced_accuracy": 0.6667,
+      "correct": 6,
+      "total": 9
+    },
+    {
+      "patient": 10,
+      "n_test_images": 51,
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "correct": 51,
+      "total": 51
+    },
+    {
+      "patient": 11,
+      "n_test_images": 46,
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "correct": 46,
+      "total": 46
+    },
+    {
+      "patient": 12,
+      "n_test_images": 19,
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "correct": 19,
+      "total": 19
+    },
+    {
+      "patient": 13,
+      "n_test_images": 3,
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "correct": 3,
+      "total": 3
+    },
+    {
+      "patient": 14,
+      "n_test_images": 4,
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "correct": 4,
+      "total": 4
+    }
+  ],
+  "runtime": {
+    "total_minutes": 448.9,
+    "total_hours": 7.48
+  },
+  "comparison_with_no_aug": {
+    "note": "v3-no-aug achieved 88.41% mean patient accuracy vs 88.36% with augmentation",
+    "analysis": "Augmentation provided similar performance with slightly different per-patient results"
+  }
+}
