@@ -1,0 +1,259 @@
+{
+  "pipeline": "Lab_Norm + MultiScale + DINOv2(768)+DenseNet121(1024) + CLAM",
+  "evaluation": "LOPO",
+  "augmentation": true,
+  "classes": [
+    "HGC",
+    "LGC",
+    "Normal"
+  ],
+  "n_patients": 14,
+  "total_images": 1713,
+  "results": {
+    "mean_patient_acc": 0.9045101819197773,
+    "std_patient_acc": 0.09513348010846345,
+    "mean_patient_bal": 0.8942906007086087,
+    "std_patient_bal": 0.09649308209398291,
+    "overall_image_acc": 0.8517221249270286,
+    "overall_balanced_acc": 0.8342390185573437,
+    "total_correct": 1459,
+    "total_images": 1713,
+    "confusion_matrix": [
+      [
+        300,
+        136,
+        33
+      ],
+      [
+        26,
+        605,
+        16
+      ],
+      [
+        16,
+        27,
+        554
+      ]
+    ],
+    "folds": [
+      {
+        "patient": "1",
+        "n_test_images": 491,
+        "image_accuracy": 0.8716904276985743,
+        "balanced_accuracy": 0.8052935606060606,
+        "correct": 428,
+        "total": 491,
+        "distribution": {
+          "Normal": 275,
+          "LGC": 128,
+          "HGC": 88
+        },
+        "mean_confidence": 0.9579641819000244,
+        "n_aug_train": 1187
+      },
+      {
+        "patient": "2",
+        "n_test_images": 302,
+        "image_accuracy": 0.8509933774834437,
+        "balanced_accuracy": 0.8282073844030365,
+        "correct": 257,
+        "total": 302,
+        "distribution": {
+          "Normal": 115,
+          "LGC": 112,
+          "HGC": 75
+        },
+        "mean_confidence": 0.9414860010147095,
+        "n_aug_train": 1374
+      },
+      {
+        "patient": "3",
+        "n_test_images": 172,
+        "image_accuracy": 0.7790697674418605,
+        "balanced_accuracy": 0.817941862059509,
+        "correct": 134,
+        "total": 172,
+        "distribution": {
+          "Normal": 44,
+          "LGC": 26,
+          "HGC": 102
+        },
+        "mean_confidence": 0.9189572930335999,
+        "n_aug_train": 1509
+      },
+      {
+        "patient": "4",
+        "n_test_images": 234,
+        "image_accuracy": 0.7094017094017094,
+        "balanced_accuracy": 0.7661083407918851,
+        "correct": 166,
+        "total": 234,
+        "distribution": {
+          "Normal": 45,
+          "LGC": 79,
+          "HGC": 110
+        },
+        "mean_confidence": 0.8909553289413452,
+        "n_aug_train": 1453
+      },
+      {
+        "patient": "5",
+        "n_test_images": 175,
+        "image_accuracy": 0.88,
+        "balanced_accuracy": 0.8662771519809103,
+        "correct": 154,
+        "total": 175,
+        "distribution": {
+          "Normal": 59,
+          "LGC": 70,
+          "HGC": 46
+        },
+        "mean_confidence": 0.9320134520530701,
+        "n_aug_train": 1520
+      },
+      {
+        "patient": "6",
+        "n_test_images": 122,
+        "image_accuracy": 0.8852459016393442,
+        "balanced_accuracy": 0.7614035087719299,
+        "correct": 108,
+        "total": 122,
+        "distribution": {
+          "Normal": 6,
+          "LGC": 76,
+          "HGC": 40
+        },
+        "mean_confidence": 0.9629492163658142,
+        "n_aug_train": 1554
+      },
+      {
+        "patient": "7",
+        "n_test_images": 28,
+        "image_accuracy": 0.9285714285714286,
+        "balanced_accuracy": 0.9166666666666666,
+        "correct": 26,
+        "total": 28,
+        "distribution": {
+          "Normal": 6,
+          "LGC": 14,
+          "HGC": 8
+        },
+        "mean_confidence": 0.960141122341156,
+        "n_aug_train": 1648
+      },
+      {
+        "patient": "8",
+        "n_test_images": 57,
+        "image_accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "correct": 57,
+        "total": 57,
+        "distribution": {
+          "Normal": 12,
+          "LGC": 45
+        },
+        "mean_confidence": 0.9918909668922424,
+        "n_aug_train": 1619
+      },
+      {
+        "patient": "9",
+        "n_test_images": 9,
+        "image_accuracy": 0.7777777777777778,
+        "balanced_accuracy": 0.7777777777777778,
+        "correct": 7,
+        "total": 9,
+        "distribution": {
+          "LGC": 9
+        },
+        "mean_confidence": 0.8730043768882751,
+        "n_aug_train": 1667
+      },
+      {
+        "patient": "10",
+        "n_test_images": 51,
+        "image_accuracy": 0.9803921568627451,
+        "balanced_accuracy": 0.9803921568627451,
+        "correct": 50,
+        "total": 51,
+        "distribution": {
+          "LGC": 51
+        },
+        "mean_confidence": 0.9935118556022644,
+        "n_aug_train": 1625
+      },
+      {
+        "patient": "11",
+        "n_test_images": 46,
+        "image_accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "correct": 46,
+        "total": 46,
+        "distribution": {
+          "LGC": 11,
+          "Normal": 35
+        },
+        "mean_confidence": 0.9999315738677979,
+        "n_aug_train": 1630
+      },
+      {
+        "patient": "12",
+        "n_test_images": 19,
+        "image_accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "correct": 19,
+        "total": 19,
+        "distribution": {
+          "LGC": 19
+        },
+        "mean_confidence": 0.981217622756958,
+        "n_aug_train": 1657
+      },
+      {
+        "patient": "13",
+        "n_test_images": 3,
+        "image_accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "correct": 3,
+        "total": 3,
+        "distribution": {
+          "LGC": 3
+        },
+        "mean_confidence": 0.9998525977134705,
+        "n_aug_train": 1673
+      },
+      {
+        "patient": "14",
+        "n_test_images": 4,
+        "image_accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "correct": 4,
+        "total": 4,
+        "distribution": {
+          "LGC": 4
+        },
+        "mean_confidence": 0.8589558601379395,
+        "n_aug_train": 1672
+      }
+    ]
+  },
+  "config": {
+    "patch_scales": [
+      96,
+      128,
+      192
+    ],
+    "max_patches_per_image": 70,
+    "feature_dim": 1792,
+    "backbone": "DINOv2(768)+DenseNet121(1024)",
+    "mil_model": "CLAM",
+    "clam_k_sample": 8,
+    "epochs": 60,
+    "early_stopping_patience": 15,
+    "lr": 0.0001,
+    "n_ensemble": 3,
+    "class_weighted_loss": true,
+    "use_tta": true,
+    "tta_rounds": 3,
+    "total_runtime_minutes": 279.4030826250712
+  }
+}
