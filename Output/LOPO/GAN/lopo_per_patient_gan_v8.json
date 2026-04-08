@@ -1,0 +1,153 @@
+{
+  "raw_acc": 0.8618543870566272,
+  "opt_acc": 0.747355320472931,
+  "raw_bal": 0.8491640108109452,
+  "opt_bal": 0.7661323940879209,
+  "pat_acc_raw": 0.9285714285714286,
+  "pat_acc_opt": 0.5714285714285714,
+  "hgc_recall_raw": 0.7230046948356808,
+  "hgc_recall_opt": 0.9413145539906104,
+  "lgc_recall_opt": 0.5277310924369748,
+  "norm_recall_opt": 0.8293515358361775,
+  "cancer_detection_acc": 0.9228375855631612,
+  "cancer_sensitivity": 0.9764936336924583,
+  "cancer_specificity": 0.8293515358361775,
+  "n_patients": 14,
+  "n_images": 1607,
+  "runtime_hrs": 45.85333969175816,
+  "primary_backbone": "dinov2_vitl14",
+  "fine_tune_epochs": 8,
+  "thresholds": [
+    2.998350007515643,
+    0.0005180628176245996,
+    0.0011319296667327608
+  ],
+  "fold_metrics": [
+    {
+      "patient": 1,
+      "n_images": 468,
+      "accuracy": 0.8012820512820513,
+      "time_min": 161.39761937856673,
+      "ft_time_min": 102.57463920513788,
+      "ft_val_acc": 0.96,
+      "clam_time_min": 32.18844662904739
+    },
+    {
+      "patient": 2,
+      "n_images": 283,
+      "accuracy": 0.901060070671378,
+      "time_min": 171.78619800806047,
+      "ft_time_min": 106.90763088067372,
+      "ft_val_acc": 0.9693486590038314,
+      "clam_time_min": 36.6288340250651
+    },
+    {
+      "patient": 3,
+      "n_images": 160,
+      "accuracy": 0.85,
+      "time_min": 202.26200312376022,
+      "ft_time_min": 127.41064192056656,
+      "ft_val_acc": 0.9407665505226481,
+      "clam_time_min": 44.86723829507828
+    },
+    {
+      "patient": 4,
+      "n_images": 220,
+      "accuracy": 0.8590909090909091,
+      "time_min": 191.42926998138427,
+      "ft_time_min": 118.78385844628016,
+      "ft_val_acc": 0.9420289855072463,
+      "clam_time_min": 42.89292113780975
+    },
+    {
+      "patient": 5,
+      "n_images": 162,
+      "accuracy": 0.8641975308641975,
+      "time_min": 196.6479712486267,
+      "ft_time_min": 120.319954987367,
+      "ft_val_acc": 0.96875,
+      "clam_time_min": 45.97620748678843
+    },
+    {
+      "patient": 6,
+      "n_images": 115,
+      "accuracy": 0.9391304347826087,
+      "time_min": 199.4686411857605,
+      "ft_time_min": 126.42784949541092,
+      "ft_val_acc": 0.9425675675675675,
+      "clam_time_min": 42.498745103677116
+    },
+    {
+      "patient": 7,
+      "n_images": 27,
+      "accuracy": 0.9629629629629629,
+      "time_min": 212.16963717540105,
+      "ft_time_min": 133.15047058264415,
+      "ft_val_acc": 0.964968152866242,
+      "clam_time_min": 47.701335978508
+    },
+    {
+      "patient": 8,
+      "n_images": 51,
+      "accuracy": 0.7254901960784313,
+      "time_min": 191.93723233540854,
+      "ft_time_min": 126.06701595783234,
+      "ft_val_acc": 0.9773462783171522,
+      "clam_time_min": 34.737876737117766
+    },
+    {
+      "patient": 9,
+      "n_images": 6,
+      "accuracy": 1.0,
+      "time_min": 207.96941658655803,
+      "ft_time_min": 130.40398439963658,
+      "ft_val_acc": 0.9591194968553459,
+      "clam_time_min": 46.35712648232778
+    },
+    {
+      "patient": 10,
+      "n_images": 47,
+      "accuracy": 0.9787234042553191,
+      "time_min": 199.90040398041407,
+      "ft_time_min": 124.21298724810282,
+      "ft_val_acc": 0.970873786407767,
+      "clam_time_min": 44.86646293004354
+    },
+    {
+      "patient": 11,
+      "n_images": 44,
+      "accuracy": 1.0,
+      "time_min": 189.91088945468266,
+      "ft_time_min": 131.38461370468139,
+      "ft_val_acc": 0.964516129032258,
+      "clam_time_min": 27.56731514930725
+    },
+    {
+      "patient": 12,
+      "n_images": 18,
+      "accuracy": 1.0,
+      "time_min": 202.57816544771194,
+      "ft_time_min": 130.5775319178899,
+      "ft_val_acc": 0.9462025316455697,
+      "clam_time_min": 40.73317111333211
+    },
+    {
+      "patient": 13,
+      "n_images": 3,
+      "accuracy": 1.0,
+      "time_min": 212.26685235500335,
+      "ft_time_min": 134.36591311693192,
+      "ft_val_acc": 0.9654088050314465,
+      "clam_time_min": 46.67106128533681
+    },
+    {
+      "patient": 14,
+      "n_images": 3,
+      "accuracy": 0.6666666666666666,
+      "time_min": 211.41746033032734,
+      "ft_time_min": 133.43803566296896,
+      "ft_val_acc": 0.9685534591194969,
+      "clam_time_min": 46.83256742159526
+    }
+  ]
+}
