@@ -1,0 +1,217 @@
+{
+  "raw_acc": 0.8288736776602365,
+  "opt_acc": 0.7840696950840075,
+  "raw_bal": 0.8154702019249269,
+  "opt_bal": 0.7902870702992857,
+  "pat_acc_raw": 0.7857142857142857,
+  "pat_acc_opt": 0.6428571428571429,
+  "hgc_recall_raw": 0.6830985915492958,
+  "hgc_recall_opt": 0.8474178403755869,
+  "lgc_recall_opt": 0.6957983193277311,
+  "norm_recall_opt": 0.8276450511945392,
+  "cancer_detection_acc": 0.9135034225264468,
+  "cancer_sensitivity": 0.9627815866797258,
+  "cancer_specificity": 0.8276450511945392,
+  "n_patients": 14,
+  "n_images": 1607,
+  "runtime_hrs": 6.734084133174684,
+  "primary_backbone": "endofm",
+  "fine_tune_epochs": 10,
+  "thresholds": [
+    2.8124894293657143,
+    0.13500809874039194,
+    0.05250247189389315
+  ],
+  "fold_metrics": [
+    {
+      "patient": 1,
+      "n_images": 468,
+      "accuracy": 0.7841880341880342,
+      "time_min": 1.2634788751602173,
+      "ft_time_min": 0.0,
+      "ft_val_acc": null,
+      "clam_time_min": 0.0,
+      "mode": "reused_weights_inference",
+      "pred_file": "results_finetune_v2/fold_outputs/fold_01_patient_1.npz"
+    },
+    {
+      "patient": 2,
+      "n_images": 283,
+      "accuracy": 0.8904593639575972,
+      "time_min": 0.82434561252594,
+      "ft_time_min": 0.0,
+      "ft_val_acc": null,
+      "clam_time_min": 0.0,
+      "mode": "reused_weights_inference",
+      "pred_file": "results_finetune_v2/fold_outputs/fold_02_patient_2.npz"
+    },
+    {
+      "patient": 3,
+      "n_images": 160,
+      "accuracy": 0.8125,
+      "time_min": 0.4701682368914286,
+      "ft_time_min": 0.0,
+      "ft_val_acc": null,
+      "clam_time_min": 0.0,
+      "mode": "reused_weights_inference",
+      "pred_file": "results_finetune_v2/fold_outputs/fold_03_patient_3.npz"
+    },
+    {
+      "patient": 4,
+      "n_images": 220,
+      "accuracy": 0.7181818181818181,
+      "time_min": 0.641614842414856,
+      "ft_time_min": 0.0,
+      "ft_val_acc": null,
+      "clam_time_min": 0.0,
+      "mode": "reused_weights_inference",
+      "pred_file": "results_finetune_v2/fold_outputs/fold_04_patient_4.npz"
+    },
+    {
+      "patient": 5,
+      "n_images": 162,
+      "accuracy": 0.8333333333333334,
+      "time_min": 0.47717492977778114,
+      "ft_time_min": 0.0,
+      "ft_val_acc": null,
+      "clam_time_min": 0.0,
+      "mode": "reused_weights_inference",
+      "pred_file": "results_finetune_v2/fold_outputs/fold_05_patient_5.npz"
+    },
+    {
+      "patient": 6,
+      "n_images": 115,
+      "accuracy": 0.8695652173913043,
+      "time_min": 0.324767009417216,
+      "ft_time_min": 0.0,
+      "ft_val_acc": null,
+      "clam_time_min": 0.0,
+      "mode": "reused_weights_inference",
+      "pred_file": "results_finetune_v2/fold_outputs/fold_06_patient_6.npz"
+    },
+    {
+      "patient": 7,
+      "n_images": 27,
+      "accuracy": 0.8518518518518519,
+      "time_min": 0.10010606447855631,
+      "ft_time_min": 0.0,
+      "ft_val_acc": null,
+      "clam_time_min": 0.0,
+      "mode": "reused_weights_inference",
+      "pred_file": "results_finetune_v2/fold_outputs/fold_07_patient_7.npz"
+    },
+    {
+      "patient": 8,
+      "n_images": 51,
+      "accuracy": 0.9803921568627451,
+      "time_min": 0.16520418723424277,
+      "ft_time_min": 0.0,
+      "ft_val_acc": null,
+      "clam_time_min": 0.0,
+      "mode": "reused_weights_inference",
+      "pred_file": "results_finetune_v2/fold_outputs/fold_08_patient_8.npz"
+    },
+    {
+      "patient": 9,
+      "n_images": 6,
+      "accuracy": 1.0,
+      "time_min": 0.03453641732533773,
+      "ft_time_min": 0.0,
+      "ft_val_acc": null,
+      "clam_time_min": 0.0,
+      "mode": "reused_weights_inference",
+      "pred_file": "results_finetune_v2/fold_outputs/fold_09_patient_9.npz"
+    },
+    {
+      "patient": 10,
+      "n_images": 47,
+      "accuracy": 1.0,
+      "time_min": 83.76128329833348,
+      "ft_time_min": 34.54896618525187,
+      "ft_val_acc": 0.9223300970873787,
+      "clam_time_min": 42.35239857037862,
+      "mode": "trained",
+      "pred_file": "results_finetune_v2/fold_outputs/fold_10_patient_10.npz",
+      "fold_dir": "results_finetune_v2/weights/fold_10_patient_10",
+      "primary_path": "results_finetune_v2/weights/fold_10_patient_10/primary_backbone.pt",
+      "clam_paths": [
+        "results_finetune_v2/weights/fold_10_patient_10/clam_ensemble_01.pt",
+        "results_finetune_v2/weights/fold_10_patient_10/clam_ensemble_02.pt",
+        "results_finetune_v2/weights/fold_10_patient_10/clam_ensemble_03.pt"
+      ]
+    },
+    {
+      "patient": 11,
+      "n_images": 44,
+      "accuracy": 1.0,
+      "time_min": 73.07563633918762,
+      "ft_time_min": 31.423505075772603,
+      "ft_val_acc": 0.8774193548387097,
+      "clam_time_min": 34.88652437527974,
+      "mode": "trained",
+      "pred_file": "results_finetune_v2/fold_outputs/fold_11_patient_11.npz",
+      "fold_dir": "results_finetune_v2/weights/fold_11_patient_11",
+      "primary_path": "results_finetune_v2/weights/fold_11_patient_11/primary_backbone.pt",
+      "clam_paths": [
+        "results_finetune_v2/weights/fold_11_patient_11/clam_ensemble_01.pt",
+        "results_finetune_v2/weights/fold_11_patient_11/clam_ensemble_02.pt",
+        "results_finetune_v2/weights/fold_11_patient_11/clam_ensemble_03.pt"
+      ]
+    },
+    {
+      "patient": 12,
+      "n_images": 18,
+      "accuracy": 0.8333333333333334,
+      "time_min": 66.70702662865321,
+      "ft_time_min": 39.088230260213216,
+      "ft_val_acc": 0.9462025316455697,
+      "clam_time_min": 20.59741776784261,
+      "mode": "trained",
+      "pred_file": "results_finetune_v2/fold_outputs/fold_12_patient_12.npz",
+      "fold_dir": "results_finetune_v2/weights/fold_12_patient_12",
+      "primary_path": "results_finetune_v2/weights/fold_12_patient_12/primary_backbone.pt",
+      "clam_paths": [
+        "results_finetune_v2/weights/fold_12_patient_12/clam_ensemble_01.pt",
+        "results_finetune_v2/weights/fold_12_patient_12/clam_ensemble_02.pt",
+        "results_finetune_v2/weights/fold_12_patient_12/clam_ensemble_03.pt"
+      ]
+    },
+    {
+      "patient": 13,
+      "n_images": 3,
+      "accuracy": 1.0,
+      "time_min": 84.56796975533167,
+      "ft_time_min": 39.933770112196605,
+      "ft_val_acc": 0.9559748427672956,
+      "clam_time_min": 37.59532372951507,
+      "mode": "trained",
+      "pred_file": "results_finetune_v2/fold_outputs/fold_13_patient_13.npz",
+      "fold_dir": "results_finetune_v2/weights/fold_13_patient_13",
+      "primary_path": "results_finetune_v2/weights/fold_13_patient_13/primary_backbone.pt",
+      "clam_paths": [
+        "results_finetune_v2/weights/fold_13_patient_13/clam_ensemble_01.pt",
+        "results_finetune_v2/weights/fold_13_patient_13/clam_ensemble_02.pt",
+        "results_finetune_v2/weights/fold_13_patient_13/clam_ensemble_03.pt"
+      ]
+    },
+    {
+      "patient": 14,
+      "n_images": 3,
+      "accuracy": 0.6666666666666666,
+      "time_min": 91.0576740026474,
+      "ft_time_min": 40.280912800629935,
+      "ft_val_acc": 0.940251572327044,
+      "clam_time_min": 43.86592729886373,
+      "mode": "trained",
+      "pred_file": "results_finetune_v2/fold_outputs/fold_14_patient_14.npz",
+      "fold_dir": "results_finetune_v2/weights/fold_14_patient_14",
+      "primary_path": "results_finetune_v2/weights/fold_14_patient_14/primary_backbone.pt",
+      "clam_paths": [
+        "results_finetune_v2/weights/fold_14_patient_14/clam_ensemble_01.pt",
+        "results_finetune_v2/weights/fold_14_patient_14/clam_ensemble_02.pt",
+        "results_finetune_v2/weights/fold_14_patient_14/clam_ensemble_03.pt"
+      ]
+    }
+  ],
+  "weights_dir": "results_finetune_v2/weights"
+}

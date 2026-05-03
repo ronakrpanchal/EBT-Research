@@ -1,0 +1,16 @@
+{
+  "val_accuracy": 0.9619047619047619,
+  "val_precision": 0.9639647219818579,
+  "val_recall": 0.9619047619047619,
+  "val_f1": 0.96181979821772,
+  "val_mcc": 0.9468126070270397,
+  "val_kappa": 0.9460654919026896,
+  "test_accuracy": 0.8625954198473282,
+  "test_precision": 0.906666292471187,
+  "test_recall": 0.8625954198473282,
+  "test_f1": 0.8725695624851911,
+  "test_mcc": 0.784495469051716,
+  "test_kappa": 0.7763020586282137,
+  "n_nbi_pseudo_labeled": 243,
+  "pseudo_label_mean_confidence": 0.9008458852767944
+}
