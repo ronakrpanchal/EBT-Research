@@ -1,0 +1,90 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Teacher Network" id="ToVqofP4og4CYlyRALWy">
+    <mxGraphModel dx="1389" dy="741" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;dashed=1;verticalAlign=top;align=center;spacingLeft=10;spacingTop=5;fontStyle=1;fontSize=13;strokeColor=#666666;" value="1. Data Preprocessing Pipeline (WLI Images)" vertex="1">
+          <mxGeometry height="150" width="1020" x="20" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-2" parent="b0DnDfVj2xXHg-w19r-_-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" value="Labeled WLI Image&#xa;&lt;font style=&quot;font-size:11px;&quot;&gt;(x_A)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="55" width="140" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-3" parent="b0DnDfVj2xXHg-w19r-_-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=12;" value="Data Augmentation&#xa;&lt;font style=&quot;font-size:11px;&quot;&gt;(Crop, Flip, Rotate, Jitter)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="55" width="160" x="260" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-4" parent="b0DnDfVj2xXHg-w19r-_-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=12;" value="ResNet Preprocessing&#xa;&lt;font style=&quot;font-size:11px;&quot;&gt;(ImageNet Normalize)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="55" width="150" x="500" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-5" parent="b0DnDfVj2xXHg-w19r-_-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" value="Model Input Tensor&#xa;&lt;font style=&quot;font-size:11px;&quot;&gt;(224x224x3)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="55" width="140" x="730" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-6" edge="1" parent="b0DnDfVj2xXHg-w19r-_-1" source="b0DnDfVj2xXHg-w19r-_-2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;" target="b0DnDfVj2xXHg-w19r-_-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-7" edge="1" parent="b0DnDfVj2xXHg-w19r-_-1" source="b0DnDfVj2xXHg-w19r-_-3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;" target="b0DnDfVj2xXHg-w19r-_-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-8" edge="1" parent="b0DnDfVj2xXHg-w19r-_-1" source="b0DnDfVj2xXHg-w19r-_-4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;" target="b0DnDfVj2xXHg-w19r-_-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;dashed=1;verticalAlign=top;align=center;spacingLeft=10;spacingTop=5;fontStyle=1;fontSize=13;strokeColor=#666666;" value="2. Teacher Network Architecture (ResNet101)" vertex="1">
+          <mxGeometry height="230" width="1020" x="20" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-10" parent="b0DnDfVj2xXHg-w19r-_-9" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" value="ResNet101 Backbone&#xa;&lt;font style=&quot;font-size:11px;&quot;&gt;(Phase 1: Frozen)&lt;/font&gt;&#xa;&lt;font style=&quot;font-size:11px;&quot;&gt;(Phase 2: Fine-tune Top 40%)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="180" x="40" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-11" parent="b0DnDfVj2xXHg-w19r-_-9" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=12;" value="Global Average&#xa;Pooling 2D" vertex="1">
+          <mxGeometry height="60" width="130" x="270" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-12" parent="b0DnDfVj2xXHg-w19r-_-9" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=12;" value="Dense(512) + ReLU&#xa;&lt;font style=&quot;font-size:11px;&quot;&gt;+ Dropout(0.5, 0.3)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="150" x="450" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-13" parent="b0DnDfVj2xXHg-w19r-_-9" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;" value="Dense(4)&#xa;&lt;font style=&quot;font-size:11px;&quot;&gt;Softmax Classification&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="150" x="650" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-14" parent="b0DnDfVj2xXHg-w19r-_-9" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;fontStyle=1;fontSize=12;" value="Categorical Cross-Entropy&#xa;Loss" vertex="1">
+          <mxGeometry height="70" width="160" x="840" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-15" edge="1" parent="b0DnDfVj2xXHg-w19r-_-9" source="b0DnDfVj2xXHg-w19r-_-10" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;" target="b0DnDfVj2xXHg-w19r-_-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-16" edge="1" parent="b0DnDfVj2xXHg-w19r-_-9" source="b0DnDfVj2xXHg-w19r-_-11" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;" target="b0DnDfVj2xXHg-w19r-_-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-17" edge="1" parent="b0DnDfVj2xXHg-w19r-_-9" source="b0DnDfVj2xXHg-w19r-_-12" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;" target="b0DnDfVj2xXHg-w19r-_-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-18" edge="1" parent="b0DnDfVj2xXHg-w19r-_-9" source="b0DnDfVj2xXHg-w19r-_-13" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;" target="b0DnDfVj2xXHg-w19r-_-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-19" edge="1" parent="1" source="b0DnDfVj2xXHg-w19r-_-5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;" target="b0DnDfVj2xXHg-w19r-_-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="820" y="190" />
+              <mxPoint x="150" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-20" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;dashed=1;verticalAlign=top;align=center;spacingLeft=10;spacingTop=5;fontStyle=1;fontSize=13;strokeColor=#666666;" value="3. Pseudo-Label Generation (Inference)" vertex="1">
+          <mxGeometry height="150" width="1020" x="20" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-21" parent="b0DnDfVj2xXHg-w19r-_-20" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;fontSize=12;" value="Unlabeled NBI Image" vertex="1">
+          <mxGeometry height="55" width="140" x="140" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-22" parent="b0DnDfVj2xXHg-w19r-_-20" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;" value="Trained Teacher Network&#xa;&lt;font style=&quot;font-size:11px;&quot;&gt;(Frozen Inference)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="55" width="180" x="440" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-23" parent="b0DnDfVj2xXHg-w19r-_-20" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;" value="Pseudo-Labeled NBI&#xa;&lt;font style=&quot;font-size:11px;&quot;&gt;(x_B)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="55" width="140" x="780" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-24" edge="1" parent="b0DnDfVj2xXHg-w19r-_-20" source="b0DnDfVj2xXHg-w19r-_-21" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;" target="b0DnDfVj2xXHg-w19r-_-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b0DnDfVj2xXHg-w19r-_-25" edge="1" parent="b0DnDfVj2xXHg-w19r-_-20" source="b0DnDfVj2xXHg-w19r-_-22" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;" target="b0DnDfVj2xXHg-w19r-_-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
