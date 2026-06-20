@@ -761,7 +761,7 @@ def extract_features_for_split(df, desc="Extracting", norm=None, use_cache=True,
         start = 0
         for meta in pending_meta:
             n = meta['n_patches']
-            block = feats[start:start + n]
+            block = feats[start:start + n].clone()
             start += n
             if meta['cache_path'] and cache_writes_enabled:
                 try:
